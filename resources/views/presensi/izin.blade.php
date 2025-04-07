@@ -3,7 +3,7 @@
 @section('header')
 <div class = "appHeader bg-primary text-light">
     <div class="left">
-        <a href="/dashboard" class="headerButton goBack">
+        <a href="{{ url('dashboard') }}" class="headerButton goBack">
             <ion-icon name="chevron-back-outline"></ion-icon>
         </a>
     </div>
@@ -60,7 +60,7 @@
 </div>
 
     <div class="fab-button bottom-right" style="margin-bottom: 70px">
-        <a href="/presensi/buatizin" class="fab">
+        <a href={{ url('/presensi/buatizin') }} class="fab">
             <ion-icon name="add-outline"></ion-icon>
         </a>
     </div>

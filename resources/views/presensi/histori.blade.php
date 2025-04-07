@@ -3,7 +3,7 @@
 @section('header')
 <div class = "appHeader bg-primary text-light">
     <div class="left">
-        <a href="/dashboard" class="headerButton goBack">
+        <a href="{{ url('dashboard') }}" class="headerButton goBack">
             <ion-icon name="chevron-back-outline"></ion-icon>
         </a>
     </div>
@@ -70,7 +70,7 @@
                 var tahun = $("#tahun").val();
                 $.ajax({
                     type: 'POST',
-                    url: '/gethistori',
+                    url: "{{ url('gethistori') }}",
                     data: {
                         _token: "{{ csrf_token() }}",
                         bulan: bulan,
