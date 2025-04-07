@@ -20,7 +20,7 @@
     <div class="container-xl">
         <div class="row">
             <div class="col-12">
-                <form action="/presensi/izinsakit" method="GET" autocomplete="off">
+                <form action="{{ url('presensi/izinsakit') }}" method="GET" autocomplete="off">
                     <div class="row">
                         <div class="col-6">
                             <div class="input-icon mb-3">
@@ -156,7 +156,7 @@
                                         Acc
                                     </a>
                                     @else
-                                    <a href="/presensi/{{ $d->id }}/batalkanizinsakit" class="btn btn-sm btn-danger">
+                                    <a href="{{ url('presensi/' . $d->id . '/batalkanizinsakit') }}" class="btn btn-sm btn-danger">
                                         <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"
                                         fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"
                                         stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-letter-x">
@@ -187,7 +187,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form action="/presensi/approveizinsakit" method="POST">
+            <form action="{{ url('presensi/approveizinsakit') }}" method="POST">
                 @csrf
                 <input type="hidden" id="id_izinsakit_form" name="id_izinsakit_form">
                 <div class="row">

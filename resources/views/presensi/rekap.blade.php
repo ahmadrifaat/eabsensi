@@ -20,7 +20,7 @@
             <div class="col-6">
                 <div class="card">
                     <div class="card-body">
-                        <form action="/presensi/cetakrekap" target="_blank" method="POST">
+                        <form action="{{ url('presensi/cetakrekap') }}" target="_blank" method="POST">
                         @csrf
                         <div class="row">
                             <div class="col-12">

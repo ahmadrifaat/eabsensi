@@ -1,4 +1,4 @@
-<form action="/karyawan/{{ $karyawan->nrp }}/update" method="POST" id="frmKaryawan" enctype="multipart/form-data">
+<form action="{{ url('karyawan/' . $karyawan->nrp . '/update') }}" method="POST" id="frmKaryawan" enctype="multipart/form-data">
     @csrf
     <div class="row">
         <div class="col-12">
