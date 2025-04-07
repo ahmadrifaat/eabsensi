@@ -17,7 +17,7 @@
 </style>
 
 <div class="section" id="user-section">
-    <a href="/proseslogout" class="logout">
+    <a href="{{ url('proseslogout') }}" class="logout">
         <ion-icon name="log-out-outline"></ion-icon>
     </a>
     <div id="user-detail">
@@ -28,7 +28,7 @@
             @endphp
             <img src="{{ url($path) }}" alt="avatar" class="imaged w64" style="height: 60px">
             @else
-            <img src="assets/img/sample/avatar/avatar1.jpg" alt="avatar" class="imaged w64 rounded">
+            <img src="{{ url('assets/img/sample/avatar/avatar1.jpg') }}" alt="image" class="image">
             @endif
         </div>
         <div id="user-info">
@@ -44,7 +44,7 @@
             <div class="list-menu">
                 <div class="item-menu text-center">
                     <div class="menu-icon">
-                        <a href="/editprofile" class="green" style="font-size: 40px;">
+                        <a href="{{ url('editprofile') }}" class="green" style="font-size: 40px;">
                             <ion-icon name="person-sharp"></ion-icon>
                         </a>
                     </div>
@@ -54,7 +54,7 @@
                 </div>
                 <div class="item-menu text-center">
                     <div class="menu-icon">
-                        <a href="/presensi/izin" class="danger" style="font-size: 40px;">
+                        <a href="{{ url('presensi/izin') }}" class="danger" style="font-size: 40px;">
                             <ion-icon name="calendar-number"></ion-icon>
                         </a>
                     </div>
@@ -64,7 +64,7 @@
                 </div>
                 <div class="item-menu text-center">
                     <div class="menu-icon">
-                        <a href="/presensi/histori" class="warning" style="font-size: 40px;">
+                        <a href="{{ url('presensi/histori') }}" class="warning" style="font-size: 40px;">
                             <ion-icon name="document-text"></ion-icon>
                         </a>
                     </div>
@@ -227,7 +227,7 @@
                     @foreach ($leaderboard as $d)
                     <li>
                         <div class="item">
-                            <img src="assets/img/sample/avatar/avatar1.jpg" alt="image" class="image">
+                            <img src="{{ url('assets/img/sample/avatar/avatar1.jpg') }}" alt="avatar" class="imaged w64 rounded">
                             <div class="in">
                                 <div>
                                     <b>{{ $d->nama_lengkap }}</b> <br>

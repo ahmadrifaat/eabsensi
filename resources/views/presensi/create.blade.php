@@ -3,7 +3,7 @@
  <!-- App Header -->
  <div class="appHeader bg-primary text-light">
     <div class="left">
-        <a href="/dashboard" class="headerButton goBack">
+        <a href="{{ url('dashboard') }}" class="headerButton goBack">
             <ion-icon name="chevron-back-outline"></ion-icon>
         </a>
     </div>
@@ -118,7 +118,7 @@
             var lokasi = $("#lokasi").val();
             $.ajax({
                 type: 'POST',
-                url: '/presensi/store',
+                url: "{{ url('presensi/store') }}",
                 data: {
                     _token: "{{ csrf_token() }}",
                     image: image,

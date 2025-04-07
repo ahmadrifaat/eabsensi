@@ -46,7 +46,7 @@
                         {{ $messagewarning }}
                     </div>
                 @endif
-                <form action="/proseslogin" method="POST">
+                <form action="{{ url('/proseslogin') }}" method="POST">
                     @csrf
                     <div class="form-group boxed">
                         <div class="input-wrapper">

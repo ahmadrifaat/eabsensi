@@ -1,8 +1,9 @@
 @extends('layouts.presensi')
+
 @section('header')
 <div class = "appHeader bg-primary text-light">
     <div class="left">
-        <a href="/dashboard" class="headerButton goBack">
+        <a href="{{ url('dashboard') }}" class="headerButton goBack">
             <ion-icon name="chevron-back-outline"></ion-icon>
         </a>
     </div>
@@ -31,7 +32,7 @@
 </div>
 
 @section('content')
-<form action="/presensi/{{ $karyawan->nrp }}/updateprofile" method="POST" enctype="multipart/form-data">
+<form action="{{ url('presensi/' . $karyawan->nrp . '/updateprofile') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="col">
         <div class="form-group boxed">
