@@ -102,7 +102,7 @@
                 var tanggal = $("#tanggal").val();
                 $.ajax({
                     type: 'POST',
-                    url: '/getpresensi',
+                    url: "{{ url('getpresensi') }}",
                     data: {
                         _token: "{{ csrf_token() }}",
                         tanggal: tanggal

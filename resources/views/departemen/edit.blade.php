@@ -1,4 +1,4 @@
-<form action="/departemen/{{ $departemen->kode_dept }}/update" method="POST" id="frmDepartemen">
+<form action="{{ url('departemen/' . $departemen->kode_dept . '/update') }}" method="POST" id="frmDepartemen">
     @csrf
     <div class="row">
         <div class="col-12">

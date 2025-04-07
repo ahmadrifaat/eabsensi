@@ -51,7 +51,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <form action="/departemen" method="GET">
+                                <form action="{{ url('departemen') }}" method="GET">
                                     <div class="row mt-2">
                                         <div class="col-10">
                                             <div class="form-group">
@@ -104,7 +104,7 @@
                                                     <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
                                                     <path d="M16 5l3 3" /></svg>
                                                 </a>
-                                                <form action="/departemen/{{ $d->kode_dept }}/delete" method="POST">
+                                                <form action="{{ url('departemen/' . $d->kode_dept . '/delete') }}" method="POST">
                                                     @csrf
 
                                                     <a class="btn btn-danger btn-sm delete-confirm">
@@ -143,7 +143,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form action="/departemen/store" method="POST" id="frmDepartemen">
+            <form action="{{ url('departemen/store') }}" method="POST" id="frmDepartemen">
                 @csrf
                 <div class="row">
                     <div class="col-12">
@@ -221,7 +221,7 @@
                 var kode_dept = $(this).attr('kode_dept');
                 $.ajax({
                     type: 'POST',
-                    url: '/departemen/edit',
+                    url: "{{ url('departemen/edit') }}",
                     cache: false,
                     data: {
                         _token: "{{ csrf_token() }}",

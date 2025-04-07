@@ -31,7 +31,7 @@
                             {{ Session::get('error') }}
                         </div>
                         @endif
-                        <form action="/konfigurasi/updatelokasikantor" method="POST">
+                        <form action="{{ url('konfigurasi/updatelokasikantor') }}" method="POST">
                         @csrf
                         <div class="row">
                             <div class="col-12">
