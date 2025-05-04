@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Karyawan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -65,6 +66,8 @@ class DashboardController extends Controller
         // ->where('status_approved', 1)
         ->first();
 
-        return view('dashboard.dashboardadmin', compact('rekappresensi', 'rekapizin'));
+        $jumlahKaryawan = Karyawan::count();
+
+        return view('dashboard.dashboardadmin', compact('rekappresensi', 'rekapizin', 'jumlahKaryawan'));
     }
 }
