@@ -28,7 +28,7 @@
             @endphp
             <img src="{{ url($path) }}" alt="avatar" class="imaged w64" style="height: 60px">
             @else
-            <img src="{{ url('assets/img/sample/avatar/avatar1.jpg') }}" alt="image" class="image">
+            <img src="{{ url('assets/img/sample/avatar/avatar1.jpg') }}" alt="image" class="imaged w64" style="height: 60px">
             @endif
         </div>
         <div id="user-info">

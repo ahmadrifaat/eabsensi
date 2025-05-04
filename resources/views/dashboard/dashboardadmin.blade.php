@@ -29,7 +29,7 @@
                         </span>
                       </div>
                       <div class="col">
-                        <div class="font-weight-medium">132</div>
+                        <div class="font-weight-medium">{{ $jumlahKaryawan }}</div>
                         <div class="text-secondary">Jumlah Pegawai</div>
                       </div>
                     </div>
