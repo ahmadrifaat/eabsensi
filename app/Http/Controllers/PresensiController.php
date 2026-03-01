@@ -18,17 +18,19 @@ class PresensiController extends Controller
         $hariini = date("Y-m-d");
         $nrp = Auth::guard('karyawan')->user()->nrp;
         $cek = DB::table('presensi')->where('tgl_presensi', $hariini)->where('nrp', $nrp)->count();
-        $lok_kantor = DB::table('konfigurasi_lokasi')->where('id', 1)->first();
+        $kode_cabang = Auth::guard('karyawan')->user()->kode_cabang;
+        $lok_kantor = DB::table('cabang')->where('kode_cabang', $kode_cabang)->first();
         return view('presensi.create', compact('cek', 'lok_kantor'));
     }
 
     public function store(Request $request)
     {
         $nrp = Auth::guard('karyawan')->user()->nrp;
+        $kode_cabang = Auth::guard('karyawan')->user()->kode_cabang;
         $tgl_presensi = date("Y-m-d");
         $jam = date("H:i:s");
-        $lok_kantor = DB::table('konfigurasi_lokasi')->where('id', 1)->first();
-        $lok = explode(',', $lok_kantor->lokasi_kantor);
+        $lok_kantor = DB::table('cabang')->where('kode_cabang', $kode_cabang)->first();
+        $lok = explode(',', $lok_kantor->lokasi_cabang);
         $latitudekantor = $lok[0];
         $longitudekantor = $lok[1];
         $lokasi = $request->lokasi;
@@ -57,7 +59,7 @@ class PresensiController extends Controller
 
 
         $cek = DB::table('presensi')->where('tgl_presensi', $tgl_presensi)->where('nrp', $nrp)->count();
-        if($radius > $lok_kantor->radius){
+        if($radius > $lok_kantor->radius_cabang){
             echo "error|Anda Berada Di Luar Jarak Maksimal, Anda Berjarak ".$radius." Dari Kantor|radius";
         }else{
             if($cek > 0){
